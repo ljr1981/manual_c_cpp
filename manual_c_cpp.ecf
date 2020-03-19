@@ -15,6 +15,7 @@
 		</capability>
 		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<library name="diff" location="$ISE_LIBRARY\library\diff\diff.ecf"/>
+		<library name="wel" location="$ISE_LIBRARY\library\wel\wel.ecf"/>
 		<cluster name="manual_c_cpp" location=".\" recursive="true">
 			<file_rule>
 				<exclude>/.git$</exclude>
