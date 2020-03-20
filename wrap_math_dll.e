@@ -29,6 +29,7 @@ feature {NONE} -- Initialization
 feature {NONE} -- Initialization
 
 	load_library
+			-- Load "MathLibrary.dll"
 		local
 			l_dll_name: C_STRING
 		do
@@ -50,6 +51,7 @@ feature {NONE} -- Initialization
 feature -- Status Report
 
 	is_api_available: BOOLEAN
+			-- Is the `item' API library available?
 		do
 			Result := not item.is_default_pointer
 		end
@@ -57,7 +59,7 @@ feature -- Status Report
 feature -- Access
 
 	item: POINTER
-			-- R handle.
+			-- "MathLibrary.dll" handle.
 
 feature -- Wrapping DLL
 
