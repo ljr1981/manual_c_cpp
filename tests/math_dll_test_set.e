@@ -26,7 +26,7 @@ feature -- Test routines
 			l_item: WRAP_MATH_DLL
 		do
 			create l_item
-			l_item.fibonacci_initialization (1.0, 2.0)
+			l_item.fibonacci_initialization (1, 1)
 		end
 
 end

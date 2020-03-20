@@ -39,13 +39,15 @@ feature {NONE} -- Initialization
 			ensure_loaded: item /= default_pointer
 		end
 
-	cwin_permanent_load_library (dll_name: POINTER): POINTER
+	cwin_permanent_load_library (a_dll_name: POINTER): POINTER
 			-- Wrapper around LoadLibrary which will automatically
 			-- free the dll at the end of system execution.
 		external
 			"C [macro %"eif_misc.h%"] (char *): EIF_POINTER"
 		alias
 			"eif_load_dll"
+		ensure
+			item_set: item /= default_pointer
 		end
 
 feature -- Status Report
