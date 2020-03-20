@@ -10,7 +10,7 @@ class
 	WRAP_MATH_DLL
 
 inherit
-	WEL_DLL
+	ANY
 		redefine
 			default_create
 		end
@@ -21,15 +21,43 @@ feature {NONE} -- Initialization
 			--<Precursor>
 		require else
 			not_loaded: item = default_pointer
+		do
+			Precursor
+			load_library
+		end
+
+feature {NONE} -- Initialization
+
+	load_library
 		local
 			l_dll_name: C_STRING
 		do
-			Precursor
 			create l_dll_name.make ("MathLibrary.dll")
 			item := cwin_permanent_load_library (l_dll_name.item)
-		ensure then
+		ensure
 			ensure_loaded: item /= default_pointer
 		end
+
+	cwin_permanent_load_library (dll_name: POINTER): POINTER
+			-- Wrapper around LoadLibrary which will automatically
+			-- free the dll at the end of system execution.
+		external
+			"C [macro %"eif_misc.h%"] (char *): EIF_POINTER"
+		alias
+			"eif_load_dll"
+		end
+
+feature -- Status Report
+
+	is_api_available: BOOLEAN
+		do
+			Result := not item.is_default_pointer
+		end
+
+feature -- Access
+
+	item: POINTER
+			-- R handle.
 
 feature -- Wrapping DLL
 
