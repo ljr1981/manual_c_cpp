@@ -43,4 +43,13 @@
 		<library name="testing" location="$ISE_LIBRARY\library\testing\testing-safe.ecf"/>
 		<cluster name="tests" location=".\tests\" recursive="true"/>
 	</target>
+	<target name="mathlibrary">
+		<description>Test of DLL out</description>
+		<root class="DLL_OUT" feature="default_create"/>
+		<capability>
+			<void_safety use="all"/>
+		</capability>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
+		<cluster name="manual_c_cpp" location=".\" recursive="true"/>
+	</target>
 </system>

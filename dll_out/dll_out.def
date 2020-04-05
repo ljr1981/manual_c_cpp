@@ -1,0 +1,6 @@
+
+-- EXPORTED FEATURE(s) OF THE SHARED LIBRARY 
+-- SYSTEM : manual_c_cpp
+
+-- CLASS [DLL_OUT]
+DLL_OUT (default_create) : do_something call_type __stdcall
