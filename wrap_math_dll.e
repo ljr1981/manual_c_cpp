@@ -2,7 +2,7 @@ note
 	description: "Summary description for {WRAP_MATH_DLL}."
 	goal: "[
 		For the purpose of this tutorial-code, we wanted a DLL that was simple and
-		end-to-end--that is--we wanted a DLL that we wrote and controlled in Visual Studio 2020
+		end-to-end--that is--we wanted a DLL that we wrote and controlled in Visual Studio 2019
 		and then wrapped the resulting DLL in Eiffel (this class).
 		
 		Because of this--we now have a DLL that we can make as complicated as we need to
@@ -11,7 +11,7 @@ note
 		allows us to demonstrate the process from stem-to-stern (C-to-wrapper-to-consumer).
 		]"
 	MSC_special_note: "[
-		The Visual Studio 2020 C-code is NOT included in this GitHub Eiffel project.
+		The Visual Studio 2019 C-code is NOT included in this GitHub Eiffel project.
 		See the EIS link below for both a tutorial and location of the C-code, which is
 		the basis for the MS WIndows DLL being demonstrated.
 		]"
@@ -22,7 +22,7 @@ note
 		]"
 	compiling_notes: "[
 		This code is being tested using a x64 Eiffel/MSC installation. Therefore, the
-		DLL is also compiled in Visual Studio 2020 as x64. Obviously, these must match
+		DLL is also compiled in Visual Studio 2019 as x64. Obviously, these must match
 		(i.e. 32-for-32 or 64-for-64).
 		]"
 	style_notes: "[
