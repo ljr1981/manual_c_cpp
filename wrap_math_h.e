@@ -1,9 +1,11 @@
 ﻿note
 	description: "Wrapping features of <math.h>"
 	EIS: "name=interfacing_with_c_cpp", "src=https://www.eiffel.org/doc/solutions/Interfacing_with_C_and_C%%2B%%2B#Using_an_existing_C_function", "protocol=url"
+	EIS: "name=math_header_description", "src=http://www.cplusplus.com/reference/cmath/"
 	discussion: "[
 		Every feature of this class has been manually wrapped by hand.
 		]"
+	more: "See the End-of-class note clause for more."
 
 class
 	WRAP_MATH_H
@@ -31,6 +33,10 @@ feature -- External C Calls
 					longer and more meaningful word "ceiling", so we call the Eiffel feature
 					"ceiling" and link it to the "ceil" feature name in <math.h> by use of
 					the "alias" keyword.
+				3. The notation "(double): double" means `v' is passed in as (double) and
+					": double" is our Result DOUBLE coming back.
+				4. The "use <math.h>" tells our compiler where to look for the "alias" function
+					called "ceil".
 				]"
 		external
 			"C signature (double): double use <math.h>"
