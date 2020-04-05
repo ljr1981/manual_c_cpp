@@ -22,6 +22,16 @@ feature -- Test routines
 
 	math_dll_fib_test
 			-- `math_dll_fib_test' of DLL
+		note
+			basis: "[
+				The {WRAPP_MATH_DLL} class is the basis for this test.
+				Please see all of the notes at the top of that class
+				for a guide on how the DLL external works. The class
+				and its notes are there to demonstrate wrapping of the
+				C-code. This class merely demonstrates consuming that
+				class and that the code works as intended (reaching its
+				goal and purpose).
+				]"
 		local
 			l_item: WRAP_MATH_DLL
 			l_current: REAL_64
@@ -30,10 +40,10 @@ feature -- Test routines
 			from
 				create l_item.make (1, 1)
 			until
-				not l_item.fibonacci_next
+				not l_item.next_value
 			loop
-				l_current := l_item.fibonacci_current
-				l_index := l_item.fibonacci_index
+				l_current := l_item.current_value
+				l_index := l_item.index
 				print (l_current.out + " " + (l_index + 1).out + "%N")
 			end
 			assert_not_equal ("current", "0", l_current.out)
