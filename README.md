@@ -18,7 +18,7 @@ Documentation comes to you from several angles at once.
 
 Together—the three items above ought to provide you with enough information to successfully do your own hand-coded C API or DLL wrappers of equal simplicity or complexity.
 
-Note that the present code demonstrates very simplistic wrapping. More complex examples will come in time. If you have suggestions or other feedback on this or other matters, please feel free to offer them in the Eiffel Community at: https://groups.google.com/forum/#!forum/eiffel-users
+Note that the present code demonstrates very simplistic wrapping. More complex examples will come in time. If you have suggestions or other feedback on this or other matters, please feel free to offer them in the Eiffel Community at: https://groups.google.com/forum/#!forum/eiffel-users (specifically here: https://groups.google.com/forum/#!topic/eiffel-users/Rm4qM7o2RU4)
 
 ## DLL Wrapping
 Apparently, there is more than one way to wrap a DLL (MS Windows). The hand-wrapped code uses one method. There are others.
