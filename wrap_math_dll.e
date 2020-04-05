@@ -14,32 +14,67 @@ note
 class
 	WRAP_MATH_DLL
 
-feature -- Wrapping DLL
+create
+	make
+
+feature {NONE} -- Initialization
+
+	make (a, b: DOUBLE)
+			-- Initialize with seeded values.
+		do
+			fibonacci_initialization (a, b)
+			is_initialized := True
+		ensure
+			initialized: is_initialized
+		end
+
+feature {NONE} -- DLL Initialization
 
 	fibonacci_initialization (a, b: DOUBLE)
-			-- Encapsulation of a dll function with the `_stdcall' call mechanism.
-			-- Initialize a Fibonacci relation sequence
-			-- such that F(0) = a, F(1) = b.
+			-- Encapsulation of a DLL function with the `_stdcall' call mechanism.
+			-- Initialize a Fibonacci relation sequence such that F(0) = a, F(1) = b.
 			-- This function must be called before any other function.
+		require
+			not_initialized: not is_initialized
 		external
 			"C [dllwin32 %"MathLibrary.dll%"] (long, long)"
 		alias
 			"fibonacci_init"
 		end
 
+feature -- Status Report
+
+	is_initialized: BOOLEAN
+
+feature -- Access
+
 	fibonacci_index: INTEGER
+			-- The current index position in the sequence.
+		require
+			initialized: is_initialized
 		external
 			"C [dllwin32 %"MathLibrary.dll%"]: int"
 		end
 
 	fibonacci_current: DOUBLE
+			-- The current value in the sequence.
+		require
+			initialized: is_initialized
 		external
 			"C [dllwin32 %"MathLibrary.dll%"]: long"
 		end
 
+feature -- Operations
+
 	fibonacci_next: BOOLEAN
+			-- Produce the next value in the sequence.
+			-- Returns true on success, false on overflow.
+		require
+			initialized: is_initialized
 		external
 			"C [dllwin32 %"MathLibrary.dll%"]: bool"
+		ensure
+			incremented: Result implies (old fibonacci_index = (fibonacci_index - 1))
 		end
 
 end

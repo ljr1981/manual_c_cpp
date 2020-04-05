@@ -27,9 +27,8 @@ feature -- Test routines
 			l_current: REAL_64
 			l_index: INTEGER_32
 		do
-			create l_item
 			from
-				l_item.fibonacci_initialization (1, 1)
+				create l_item.make (1, 1)
 			until
 				not l_item.fibonacci_next
 			loop
@@ -37,7 +36,7 @@ feature -- Test routines
 				l_index := l_item.fibonacci_index
 				print (l_current.out + " " + (l_index + 1).out + "%N")
 			end
-			assert_equal ("current", 0.0, l_current)
+			assert_not_equal ("current", "0", l_current.out)
 			assert_integers_equal ("index", 92, l_index)
 		end
 
