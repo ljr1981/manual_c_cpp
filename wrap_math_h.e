@@ -1,5 +1,6 @@
 ﻿note
 	description: "Wrapping features of <math.h>"
+	basics: "Header <cmath> declares a set of functions to compute common mathematical operations and transformations"
 	EIS: "name=interfacing_with_c_cpp", "src=https://www.eiffel.org/doc/solutions/Interfacing_with_C_and_C%%2B%%2B#Using_an_existing_C_function", "protocol=url"
 	EIS: "name=math_header_description", "src=http://www.cplusplus.com/reference/cmath/"
 	discussion: "[
